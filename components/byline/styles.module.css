@@ -3,3 +3,7 @@
   font-style: italic;
   margin-bottom: 4px;
 }
+
+.byline a {
+  color: #0080c3;
+}

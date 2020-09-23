@@ -1,5 +1,6 @@
 import Image from './components/image';
 import Paragraph from './components/paragraph';
+import Video from './components/video';
 import styles from './styles.module.css';
 
 const Body = props => {
@@ -8,6 +9,7 @@ const Body = props => {
     const { type } = element;
     if (type === 'paragraph') return <Paragraph data={element} key={index} />;
     if (type === 'image') return <Image data={element} key={index} />;
+    if (type === 'video') return <Video data={element} key={index} />;
     return null;
   });
   return (
