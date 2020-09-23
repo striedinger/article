@@ -1,0 +1,11 @@
+.breadcrumbs {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.breadcrumb a {
+  color: #0274b6;
+  text-decoration: none;
+}
