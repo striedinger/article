@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
+import classnames from 'classnames';
 import styles from './styles.module.css';
 
 const VIDEO_API = process.env.NEXT_PUBLIC_VIDEO_API;
 
 const Video = props => {
-  const { data: { caption, name } } = props;
+  const { className, caption, guid } = props;
+  const classes = classnames(styles.video, className);
   const [state, setState] = useState({});
 
   useEffect(() => {
-    fetch(`${VIDEO_API}/api-video/find_all_videos.asp?type=guid&count=1&fields=all&query=${name}`)
+    fetch(`${VIDEO_API}/api-video/find_all_videos.asp?type=guid&count=1&fields=all&query=${guid}`)
       .then(response => response.json())
       .then(json => {
         const { items } = json;
@@ -21,9 +23,9 @@ const Video = props => {
   }, []);
 
   const wrapper = component => (
-    <figure className={styles.video}>
+    <figure className={classes}>
       {component}
-      <figcaption className={styles.caption}>
+      <figcaption>
         {caption}
       </figcaption>
     </figure>

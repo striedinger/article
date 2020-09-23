@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "fecha": "^4.2.0",
     "lodash.get": "^4.4.2",
     "next": "9.5.3",

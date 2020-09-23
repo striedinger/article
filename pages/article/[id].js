@@ -1,12 +1,13 @@
 import Error from 'next/error';
 import Head from 'next/head';
-import Navbar from 'components/navbar';
-import Breadcrumbs from 'components/breadcrumbs';
-import Headline from 'components/headline';
-import Subheadline from 'components/subheadline';
-import Byline from 'components/byline';
-import Timestamp from 'components/timestamp';
-import Body from 'components/body';
+import Navbar from 'features/navbar';
+import Breadcrumbs from 'features/breadcrumbs';
+import Headline from 'features/headline';
+import Subheadline from 'features/subheadline';
+import Hero from 'features/hero';
+import Byline from 'features/byline';
+import Timestamp from 'features/timestamp';
+import Body from 'features/body';
 import styles from './styles.module.css';
 
 const DOMAIN = process.env.DOMAIN;
@@ -27,6 +28,7 @@ const Article = props => {
           <Breadcrumbs article={article} />
           <Headline article={article} />
           <Subheadline article={article} />
+          <Hero article={article} />
           <div className={styles.body}>
             <Byline article={article} />
             <Timestamp article={article} />

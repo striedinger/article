@@ -1,0 +1,12 @@
+.hero {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.image figcaption,
+.video figcaption {
+  color: #666;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+}
