@@ -5,10 +5,6 @@
   width: 100%;
 }
 
-.tools {
-  display: none;
-}
-
 .article {
   flex: 1;
 }
@@ -18,8 +14,10 @@
   width: 100%;
 }
 
-.sidebar {
+.tools, .sidebar {
   display: none;
+  position: sticky;
+  top: 64px;
 }
 
 @media (min-width: 640px) {
@@ -47,7 +45,7 @@
     background: #ccc;
     background-clip: content-box;
     display: flex;
-    height: 800px;
+    height: 600px;
     margin-left: 10px;
     width: 320px;
   }
