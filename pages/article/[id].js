@@ -5,6 +5,7 @@ import Breadcrumbs from 'components/breadcrumbs';
 import Headline from 'components/headline';
 import Subheadline from 'components/subheadline';
 import Byline from 'components/byline';
+import Timestamp from 'components/timestamp';
 import Body from 'components/body';
 
 const DOMAIN = process.env.DOMAIN;
@@ -24,6 +25,7 @@ const Article = props => {
         <Headline article={article} />
         <Subheadline article={article} />
         <Byline article={article} />
+        <Timestamp article={article} />
         <Body article={article} />
       </article>
     </React.Fragment>
