@@ -1,5 +1,6 @@
 .timestamp {
   color: #666;
+  display: block;
   font-size: 14px;
   font-weight: 300;
   line-height: 22px;

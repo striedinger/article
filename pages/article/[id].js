@@ -7,6 +7,7 @@ import Subheadline from 'components/subheadline';
 import Byline from 'components/byline';
 import Timestamp from 'components/timestamp';
 import Body from 'components/body';
+import styles from './styles.module.css';
 
 const DOMAIN = process.env.DOMAIN;
 
@@ -20,14 +21,20 @@ const Article = props => {
         <title>{headline}</title>
       </Head>
       <Navbar />
-      <article>
-        <Breadcrumbs article={article} />
-        <Headline article={article} />
-        <Subheadline article={article} />
-        <Byline article={article} />
-        <Timestamp article={article} />
-        <Body article={article} />
-      </article>
+      <div className={styles.container}>
+        <div className={styles.tools} />
+        <article className={styles.article}>
+          <Breadcrumbs article={article} />
+          <Headline article={article} />
+          <Subheadline article={article} />
+          <div className={styles.body}>
+            <Byline article={article} />
+            <Timestamp article={article} />
+            <Body article={article} />
+          </div>
+        </article>
+        <div className={styles.sidebar} />
+      </div>
     </React.Fragment>
   );
 };
