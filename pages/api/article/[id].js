@@ -51,6 +51,7 @@ const formatResponse = json => {
     headline: get(json, 'data.attributes.headline.text'),
     subheadline: get(json, 'data.attributes.standfirst.content[0].text'),
     sectionName: get(json, 'data.attributes.section_name'),
+    sectionType: get(json, 'data.attributes.section_type'),
     byline: get(json, 'data.attributes.byline'),
     hero: body.length > 0 && (body[0].type === 'image' || body[0].type === 'video') && body.shift(),
     body,
