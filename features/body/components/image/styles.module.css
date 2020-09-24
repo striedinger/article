@@ -3,4 +3,15 @@
   font-size: 14px;
   font-weight: 300;
   line-height: 20px;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 640px) {
+  .wrap {
+    clear: both;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    width: 300px;
+  }
 }
