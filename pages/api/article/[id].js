@@ -19,9 +19,21 @@ export default async (req, res) => {
   }
 };
 
+const mods = {
+  'SB10535116806084793915704587008602549084414': {
+    body: {
+      1: {
+        highlight: true
+      }
+    }
+  },  
+};
+
 const formatResponse = json => {
+  const articleId = get(json, 'data.id');
+  const articleMods = mods[articleId];
   const references = get(json, 'links.related', []);
-  const body = get(json, 'data.attributes.body', []).map(element => {
+  const body = get(json, 'data.attributes.body', []).map((element, index) => {
     // Add expanded data to media types
     if (element.type === 'image' || element.type === 'video' || element.type === 'media') {
       const expandedElement = references.find(object => object.id === element.ref) || {};
@@ -32,6 +44,7 @@ const formatResponse = json => {
     }
     // Add expanded data to paragraphs
     if (element.type === 'paragraph') {
+      if (articleMods && articleMods.body && articleMods.body[index] && articleMods.body[index].highlight) element.highlight = true;
       element.content = element.content.map(paragraph => {
         if (paragraph.ref) {
           const expandedElement = references.find(object => object.id === paragraph.ref) || {};

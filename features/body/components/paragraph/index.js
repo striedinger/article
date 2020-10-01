@@ -1,11 +1,13 @@
+import classnames from 'classnames';
 import renderCAPI from 'helpers/renderCAPI';
 import styles from './styles.module.css';
 
 const Paragraph = props => {
-  const { data: { content: paragraphContent } } = props;
+  const { data: { content: paragraphContent, highlight } } = props;
   const content = renderCAPI(paragraphContent);
+  const classes = classnames(styles.paragraph, { [styles.highlight]: highlight });
   return (
-    <p className={styles.paragraph} dangerouslySetInnerHTML={{ __html: content }}/>
+    <p className={classes} dangerouslySetInnerHTML={{ __html: content }}/>
   );
 };
 

@@ -8,3 +8,7 @@
 .paragraph a {
   color: #0274b6;
 }
+
+.highlight {
+  text-decoration: underline;
+}
