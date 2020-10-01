@@ -2,14 +2,12 @@ import renderCAPI from 'helpers/renderCAPI';
 import styles from './styles.module.css';
 import Info from '../../../../components/svg/info.svg';
 const Paragraph = props => {
-  console.log(props);
   const { data: { content: paragraphContent, highlight, highlightWithTooltip, bold } } = props;
   const content = renderCAPI(paragraphContent);
   let style = 'highlight'; // I guess default to this?
   if (highlightWithTooltip) {
     style = 'highlightWithTooltip';
   } else if (bold) {
-    console.log(styles['bold']);
     style = 'bold';
   }
   const wrapperClassName = styles[style] || '';
