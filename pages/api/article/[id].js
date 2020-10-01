@@ -54,12 +54,15 @@ const mods = {
       4: {
         bold: true,
       },
-      7: {
+      9: {
         bold: true,
       },
-      12: {
+      16: {
         bold: true,
-      }
+      },
+      23: {
+        bold: true,
+      },
     }
   },
 };
