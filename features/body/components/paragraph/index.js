@@ -1,19 +1,26 @@
 import renderCAPI from 'helpers/renderCAPI';
 import styles from './styles.module.css';
 import Info from '../../../../components/svg/info.svg';
-
 const Paragraph = props => {
-  const { data: { content: paragraphContent, highlight, highlightWithTooltip } } = props;
+  const { data: { content: paragraphContent, highlight, highlightWithTooltip, bold } } = props;
   const content = renderCAPI(paragraphContent);
-  if (highlight || highlightWithTooltip) {
+  let style = 'highlight'; // I guess default to this?
+  if (highlightWithTooltip) {
+    style = 'highlightWithTooltip';
+  } else if (bold) {
+    style = 'bold';
+  }
+  const wrapperClassName = styles[style] || '';
+
+  if (highlight || highlightWithTooltip || bold) {
     return (
       <p className={styles.paragraph}>
-        <span className={styles.highlight}>
+        <span className={wrapperClassName}>
           {content}
           {
-            highlightWithTooltip && 
+            highlightWithTooltip &&
             <span className={styles['info-icon']}>
-              <Info/>
+              <Info />
             </span>
           }
         </span>

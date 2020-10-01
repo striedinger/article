@@ -13,7 +13,7 @@ export default async (req, res) => {
     const json = await response.json();
     // return res.json(json);
     return res.json(formatResponse(json));
-  } catch(error) {
+  } catch (error) {
     console.error(error);
     return res.status(error.status || 500).end(error.message);
   }
@@ -48,7 +48,23 @@ const mods = {
         highlightWithTooltip: true,
       }
     }
-  }
+  },
+  'SB10535116806084793915704587008490988761610': {
+    body: {
+      4: {
+        bold: true,
+      },
+      9: {
+        bold: true,
+      },
+      16: {
+        bold: true,
+      },
+      23: {
+        bold: true,
+      },
+    }
+  },
 };
 
 const formatResponse = json => {
@@ -67,6 +83,7 @@ const formatResponse = json => {
     // Add expanded data to paragraphs
     if (element.type === 'paragraph') {
       if (articleMods && articleMods.body && articleMods.body[index] && articleMods.body[index].highlight) element.highlight = true;
+      if (articleMods && articleMods.body && articleMods.body[index] && articleMods.body[index].bold) element.bold = true;
       if (articleMods && articleMods.body && articleMods.body[index] && articleMods.body[index].highlightWithTooltip) element.highlightWithTooltip = true;
       element.content = element.content.map(paragraph => {
         if (paragraph.ref) {
