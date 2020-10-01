@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import renderCAPI from 'helpers/renderCAPI';
 import styles from './styles.module.css';
 import Info from '../../../../components/svg/info.svg';
@@ -9,6 +10,12 @@ const Paragraph = props => {
     style = 'bold';
   }
   const wrapperClassName = styles[style] || '';
+  const iconWrapper = useRef(null);
+
+  const toggleOpen = force => iconWrapper.current.classList.toggle(
+    styles['is-open'],
+    typeof force === 'boolean' ? force : !iconWrapper.current.classList.contains([styles['is-open']]),
+  );
 
   if (highlight || highlightWithTooltip || bold) {
     return (
@@ -17,7 +24,13 @@ const Paragraph = props => {
           {content}
           {
             highlightWithTooltip &&
-            <span className={styles['info-icon']}>
+            <span
+              className={styles['info-icon']}
+              ref={iconWrapper}
+              onClick={toggleOpen}
+              onBlur={() => toggleOpen(false)}
+              tabindex="0"
+            >
               <Info />
             </span>
           }

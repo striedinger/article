@@ -55,7 +55,7 @@
   transform: translateX(-50%);
 }
 
-.info-icon:active:after,
-.info-icon:hover:after {
+.info-icon:hover:after,
+.info-icon.is-open:after {
   display: block;
 }
