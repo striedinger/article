@@ -5,9 +5,7 @@ const Paragraph = props => {
   const { data: { content: paragraphContent, highlight, highlightWithTooltip, bold } } = props;
   const content = renderCAPI(paragraphContent);
   let style = 'highlight'; // I guess default to this?
-  if (highlightWithTooltip) {
-    style = 'highlightWithTooltip';
-  } else if (bold) {
+  if (bold) {
     style = 'bold';
   }
   const wrapperClassName = styles[style] || '';
