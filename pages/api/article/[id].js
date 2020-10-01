@@ -39,13 +39,13 @@ const mods = {
   'SB12555213099669323554804586619772087596998': {
     body: {
       4: {
-        highlight: true,
+        highlightWithTooltip: true,
       },
       9: {
-        highlight: true,
+        highlightWithTooltip: true,
       },
       10: {
-        highlight: true,
+        highlightWithTooltip: true,
       }
     }
   }
@@ -67,6 +67,7 @@ const formatResponse = json => {
     // Add expanded data to paragraphs
     if (element.type === 'paragraph') {
       if (articleMods && articleMods.body && articleMods.body[index] && articleMods.body[index].highlight) element.highlight = true;
+      if (articleMods && articleMods.body && articleMods.body[index] && articleMods.body[index].highlightWithTooltip) element.highlightWithTooltip = true;
       element.content = element.content.map(paragraph => {
         if (paragraph.ref) {
           const expandedElement = references.find(object => object.id === paragraph.ref) || {};
