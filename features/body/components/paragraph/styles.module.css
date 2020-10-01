@@ -5,6 +5,10 @@
   margin-bottom: 17px;
 }
 
+.is-bold {
+  font-weight: 800;
+}
+
 .paragraph a {
   color: #0274b6;
 }
