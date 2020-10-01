@@ -23,29 +23,29 @@ const mods = {
   'SB10535116806084793915704587008602549084414': {
     body: {
       1: {
-        highlight: true,
+        highlightWithTooltip: true,
       },
       4: {
-        highlight: true,
+        highlightWithTooltip: true,
       },
       7: {
-        highlight: true,
+        highlightWithTooltip: true,
       },
       18: {
-        highlight: true,
+        highlightWithTooltip: true,
       }
     }
   },
   'SB12555213099669323554804586619772087596998': {
     body: {
       4: {
-        highlightWithTooltip: true,
+        highlight: true,
       },
       9: {
-        highlightWithTooltip: true,
+        highlight: true,
       },
       10: {
-        highlightWithTooltip: true,
+        highlight: true,
       }
     }
   },
