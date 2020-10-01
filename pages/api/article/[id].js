@@ -22,7 +22,7 @@ export default async (req, res) => {
 const mods = {
   'SB10535116806084793915704587008602549084414': {
     body: {
-      1: {
+      2: {
         highlightWithTooltip: true,
       },
       4: {
