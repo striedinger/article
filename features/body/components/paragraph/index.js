@@ -34,4 +34,3 @@ const Paragraph = props => {
 };
 
 export default Paragraph;
-``;
