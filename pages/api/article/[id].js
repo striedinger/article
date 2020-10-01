@@ -54,10 +54,10 @@ const mods = {
       4: {
         bold: true,
       },
-      9: {
+      7: {
         bold: true,
       },
-      10: {
+      12: {
         bold: true,
       }
     }
