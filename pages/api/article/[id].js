@@ -23,7 +23,16 @@ const mods = {
   'SB10535116806084793915704587008602549084414': {
     body: {
       1: {
-        highlight: true
+        highlight: true,
+      },
+      4: {
+        highlight: true,
+      },
+      7: {
+        highlight: true,
+      },
+      18: {
+        highlight: true,
       }
     }
   },  
