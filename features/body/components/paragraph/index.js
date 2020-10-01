@@ -2,12 +2,12 @@ import renderCAPI from 'helpers/renderCAPI';
 import styles from './styles.module.css';
 
 const Paragraph = props => {
-  const { data: { content: paragraphContent, highlight } } = props;
+  const { data: { content: paragraphContent, highlight = false, bold = false } } = props;
   const content = renderCAPI(paragraphContent);
-  if (highlight) {
+  if (highlight || bold) {
     return (
       <p className={styles.paragraph}>
-        <span className={styles.highlight}>
+        <span className={highlight ? styles.highlight : styles.bold}>
           {content}
         </span>
       </p>
@@ -19,3 +19,4 @@ const Paragraph = props => {
 };
 
 export default Paragraph;
+``;
