@@ -7,12 +7,14 @@ const Paragraph = props => {
   if (highlight) {
     return (
       <p className={styles.paragraph}>
-        <span className={styles.highlight} dangerouslySetInnerHTML={{ __html: content }} />
+        <span className={styles.highlight}>
+          {content}
+        </span>
       </p>
     );
   }
   return (
-    <p className={styles.paragraph} dangerouslySetInnerHTML={{ __html: content }}/>
+    <p className={styles.paragraph}>{content}</p>
   );
 };
 
